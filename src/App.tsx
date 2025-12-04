@@ -21,7 +21,7 @@ npm -v`}
             </div>
 
             <div className="bg-white border border-gray-200 rounded p-6 mb-8">
-                <h2 className="text-xl font-bold text-gray-900 mb-4">Deployment Steps</h2>
+                <h2 className="text-xl font-bold text-gray-900 mb-4">Developement Steps</h2>
                 <div className="space-y-6">
                     <div>
                         <h3 className="font-semibold text-gray-900">1. Create a new React app with Vite</h3>
@@ -107,6 +107,55 @@ npx tailwindcss init -p`}
                     <div>
                         <h3 className="font-semibold text-gray-900">5. Write the webpage code in App.tsx</h3>
                         <p className="text-sm text-gray-600 mt-1">I replace the default content of App.tsx with my own code to create the webpage.</p>
+                    </div>
+                </div>
+            </div>
+            <div className="bg-white border border-gray-200 rounded p-6 mb-8">
+                <h2 className="text-xl font-bold text-gray-900 mb-4">Deployement Steps</h2>
+                <div className="space-y-6">
+                    <div>
+                        <h3 className="font-semibold text-gray-900">1. Create a repository on github</h3>
+                        <p className="text-sm text-gray-600 mt-1">The repo has to be named username.github.io and has to be public</p>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-gray-900">2. Add your work to the github repo</h3>
+                        <p className="text-sm text-gray-600 mt-1">I ran the following commands to do that:</p>
+                        <pre className="bg-gray-900 text-green-400 text-xs p-3 rounded mt-2 overflow-x-auto">
+                            <code>{`git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/markiianbabiak/markiianbabiak.github.io.git
+git push -u origin main`}   </code>
+                        </pre>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-gray-900">3. Build the website</h3>
+                        <p className="text-sm text-gray-600 mt-1">I ran the following command to build the website in a dist folder:</p>
+                        <pre className="bg-gray-900 text-green-400 text-xs p-3 rounded mt-2 overflow-x-auto">
+                            <code>{`npm run build`}</code>
+                        </pre>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-gray-900">4. Put the dist folder onto a different branch</h3>
+                        <p className="text-sm text-gray-600 mt-1">I ran the following command to do that:</p>
+                        <pre className="bg-gray-900 text-green-400 text-xs p-3 rounded mt-2 overflow-x-auto">
+                            <code>{`git checkout --orphan gh-pages
+git reset --hard
+cp -r dist/* .
+git add .
+git commit -m "Deploy"
+git push origin gh-pages
+git checkout main`}         </code>
+                        </pre>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-gray-900">5. Change the source branch for the GitHub Pages</h3>
+                        <p className="text-sm text-gray-600 mt-1">Go into the repo setting, then clock on github pages then change the source branch to gh-pages</p>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-gray-900">6. Go ahead and check the results</h3>
+                        <a className="text-sm text-gray-600 mt-1" href="https://markiianbabiak.github.io">Here</a>
                     </div>
                 </div>
             </div>
